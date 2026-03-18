@@ -1,0 +1,12 @@
+# 排除 node_modules（用户安装后自行 npm install）
+node_modules/
+# 排除源码目录（仅保留编译后的 out 目录）
+src/
+# 排除调试/配置文件
+.vscode/
+tsconfig.json
+.eslintrc.json
+.gitignore
+# 排除文档类文件（可选）
+README.md
+LICENSE

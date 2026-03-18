@@ -1,0 +1,62 @@
+{
+  "name": "qwen-code-auditor",
+  "displayName": "Qwen Code Auditor (7B-32K)",
+  "description": "基于Qwen2.5-Coder:7B-32K大模型的本地C/C++代码漏洞检测工具，聚焦内存损坏、资源泄漏等核心安全问题，所有检测本地完成，保障代码隐私。",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "onCommand:qwen-code-auditor.checkVulnerability",
+    "onCommand:qwen-code-auditor.clearCache"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "qwen-code-auditor.checkVulnerability",
+        "title": "代码检查: 漏洞扫描"
+      },
+      {
+        "command": "qwen-code-auditor.clearCache",
+        "title": "代码检查: 清空检查缓存"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "echo \"No lint configured\""
+  },
+  "devDependencies": {
+    "@types/md5": "^2.3.6",
+    "@types/node": "^20.2.5",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.49.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@supercharge/promise-pool": "^3.3.0",
+    "axios": "^1.13.6",
+    "md5": "^2.3.0"
+  },
+  "publisher": "your-publisher-name",
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Security"
+  ],
+  "keywords": [
+    "C/C++",
+    "vulnerability",
+    "security",
+    "Qwen2.5",
+    "local AI",
+    "code audit"
+  ],
+  "license": "MIT"
+}
